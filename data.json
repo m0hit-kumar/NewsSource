@@ -1,0 +1,24 @@
+[
+  {
+    "_id": "63a67b57200774c0349479f8",
+    "title": "Attack of 26/11",
+    "description": "The 2008 Mumbai attacks (also referred to as 26/11, pronounced 'twenty six eleven')  were a series of terrorist attacks that took place in November 2008, when 10 members of Lashkar-e-Taiba, an Islamist terrorist organisation from Pakistan, carried out 12 coordinated shooting and bombing attacks lasting four days across Mumbai. On November 26, 2008, 10 Lashkar-e-Taiba terrorists from Pakistan arrived by sea route and opened fire, killing 166 people",
+    "imageUrl": "https://images.thequint.com/thequint/2017-11/4c988188-c509-4f78-85ba-875dc73009ae/26%2011%20HC.jpg",
+    "dataSources": "Wikipedia, The Hindu",
+    "sourceConfidence": 89,
+    "category": "Incident",
+    "dateCreated": "2022-12-24T04:05:26.267Z",
+    "__v": 0
+  },
+  {
+    "_id": "63a67bde200774c0349479fa",
+    "title": "GDSC",
+    "description": "Google Developer Student Clubs are university based community groups for students interested in Google developer technologies. Students from all undergraduate or graduate programs with an interest in growing as a developer are welcome. By joining a GDSC, students grow their knowledge in a peer-to-peer learning environment and build solutions for local businesses and their community.",
+    "imageUrl": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,dpr_2,f_auto,g_center,q_auto:good/v1/gcs/platform-data-dsc/events/small-logo.png",
+    "dataSources": "Google",
+    "sourceConfidence": 100,
+    "category": "Community",
+    "dateCreated": "2022-12-24T04:05:26.267Z",
+    "__v": 0
+  }
+]
