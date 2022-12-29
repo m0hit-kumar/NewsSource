@@ -6,10 +6,11 @@ pytrend = TrendReq()
 def process_request():
     df = pytrend.trending_searches()
     df = df.values.tolist()
+    print(df)
     return df
 
 def getNews(query=process_request()):
-    for keyword in query:
+     for keyword in query:
         # print(keyword)
         url = ('https://newsapi.org/v2/everything?'
                f'q={keyword[0]}&'

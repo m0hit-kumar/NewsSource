@@ -14,22 +14,26 @@ client = tweepy.Client(bearer_token= bearer_token,consumer_key= api_key,consumer
 
 def gettweets(query):
     tweets = client.search_recent_tweets(query=query)
-    response = []     
-    for tweet in tweets.data:
-        x = re.search(r"@\w+", tweet.text)
-        # m=int(x.span()[0])
-        # n=int(x.span()[1])
-        # print(tweet.text[m:n])
+    # print(tweets)
+    response = []
+    if tweets.data==type(None) or tweets.data==None:  
+        return response
+    else:   
+        for tweet in tweets.data:
+            x = re.search(r"@\w+", tweet.text)
+            # m=int(x.span()[0])
+            # n=int(x.span()[1])
+            # print(tweet.text[m:n])
 
-        doc = {}
-        doc["title"] = query
-        doc["description"] = tweet.text
-        doc["imageUrl"] = "https://pbs.twimg.com/profile_images/1488548719062654976/u6qfBBkF_400x400.jpg"
-        doc["dataSource"] = f"Twitter "
-        doc["sourceConfidence"] = randint(40, 70)
-        doc["category"] = 'trending'
-        response.append(doc)
-        
+            doc = {}
+            doc["title"] = query
+            doc["description"] = tweet.text
+            doc["imageUrl"] = "https://pbs.twimg.com/profile_images/1488548719062654976/u6qfBBkF_400x400.jpg"
+            doc["dataSource"] = f"Twitter "
+            doc["sourceConfidence"] = randint(40, 70)
+            doc["category"] = 'trending'
+            response.append(doc)
+            
     return response
 
 
