@@ -13,7 +13,7 @@ def get_wiki(query):
         response = []     
         doc = {}
         doc["title"] = page_py.title
-        doc["description"] = summarize(page_py.title,page_py.summary,7)
+        doc["description"] = " ".join(summarize(page_py.title,page_py.summary,7))
         doc["imageUrl"] = "https://upload.wikimedia.org/wikipedia/en/thumb/8/80/Wikipedia-logo-v2.svg/1200px-Wikipedia-logo-v2.svg.png"
         doc["dataSource"] = "Wikipedia"
         doc["sourceConfidence"] = randint(90, 100)
