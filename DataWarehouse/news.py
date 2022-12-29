@@ -11,7 +11,6 @@ def process_request():
 
 def getNews(query=process_request()):
      for keyword in query:
-        # print(keyword)
         url = ('https://newsapi.org/v2/everything?'
                f'q={keyword[0]}&'
                'sortBy=popularity&'
