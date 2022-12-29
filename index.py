@@ -2,6 +2,7 @@ from flask import Flask
 import threading
 import DataWarehouse.news as getNews
 import DataWarehouse.tweets as getTweets
+from DataWarehouse.wikipedia import get_wiki
 
 def printit():
     threading.Timer(5.0, printit).start()
@@ -27,8 +28,9 @@ def home():
 def req(query):
     tweets=getTweets.gettweets(query)
     news=getNews.getNews([query])
+    wiki=get_wiki.getWiki(query)
      
-    res=tweets+news
+    res=tweets+news+wiki
 
     return res
 
