@@ -1,7 +1,7 @@
 from flask import Flask
 import threading
 import DataWarehouse.news as getNews
-
+import DataWarehouse.tweets as getTweets
 
 def printit():
     threading.Timer(5.0, printit).start()
@@ -23,9 +23,14 @@ def home():
     return '<H6>/query/<query> : Will give to data regrading the specfic query<br> /n /api : will give to all trending data</h6>'
 
 
-@app.route('/<query>')
+@app.route('/query/<query>')
 def req(query):
-    return "<h1>hello,"+query+"</h1>"
+    tweets=getTweets.gettweets(query)
+    news=getNews.getNews([query])
+     
+    res=tweets+news
+
+    return res
 
 
 @app.route('/trendingNews')

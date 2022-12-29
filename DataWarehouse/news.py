@@ -3,13 +3,14 @@ import requests
 from random import *
 pytrend = TrendReq()
 
-
-def getNews():
-    # print("news updated")
+def process_request():
     df = pytrend.trending_searches()
     df = df.values.tolist()
-    for keyword in df:
-        # print(keyword[0])
+    return df
+
+def getNews(query=process_request()):
+    for keyword in query:
+        # print(keyword)
         url = ('https://newsapi.org/v2/everything?'
                f'q={keyword[0]}&'
                'sortBy=popularity&'
@@ -28,3 +29,6 @@ def getNews():
             response.append(doc)
 
         return response
+
+# print(getNews(["happy new year"]))
+# getNews()
