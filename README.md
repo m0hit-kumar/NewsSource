@@ -9,6 +9,10 @@ End Point Available:
       /trendingNews
       /api
 
+## Now you can test it simply on :
+      https://m0hit-kumar.github.io/API-Tester
+
+
 ## Installation
 
 To run the app flawlessly, satisfy the requirements
