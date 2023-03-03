@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>API Documentation</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f2f2f2;
+      }
+
+      header {
+        background-color: #222;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: 36px;
+        font-weight: normal;
+      }
+
+      main {
+        margin: 20px;
+        background-color: #fff;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        padding: 20px;
+        border-radius: 5px;
+      }
+
+      section {
+        margin-bottom: 20px;
+      }
+
+      h2 {
+        font-size: 24px;
+        font-weight: normal;
+        margin-top: 0;
+      }
+
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      li {
+        margin: 10px 0;
+      }
+
+      pre {
+        margin: 0;
+        padding: 10px;
+        background-color: #f2f2f2;
+        border-radius: 5px;
+
+        max-width: 100%;
+        white-space: pre-wrap;
+        word-break: break-all;
+      }
+
+      code {
+        font-family: monospace;
+        margin: 0;
+        padding: 10px;
+        background-color: #f2f2f2;
+        border-radius: 5px;
+      }
+
+      footer {
+        background-color: #ccc;
+        color: #333;
+        padding: 20px;
+        text-align: center;
+        font-size: 12px;
+      }
+
+      img {
+        width: 18px;
+        height: 18px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>NewsSource API Documentation</h1>
+    </header>
+
+    <main>
+      <section>
+        <h2>Introduction</h2>
+        <p>
+          NewsSource is a web-based API that provides users with trending news
+          on any given topic. It collects data from various sources such as
+          Google Trends, Wikipedia, Twitter, and news articles. The data is then
+          summarized and analyzed for confidence using machine learning models,
+          specifically Decision Tree Classifier, Gradient Boosting Classifier,
+          and Logistic Regression. This documentation aims to provide a guide on
+          how to use the NewsSource API to fetch data on trending topics and how
+          to interpret the data.
+        </p>
+      </section>
+
+      <section>
+        <h2>Getting Started</h2>
+        <p>
+          To use the API, you dont need need an API key. Just go through the the
+          documenatations and you will learn various endpoints that are
+          available to use.
+        </p>
+      </section>
+
+      <section>
+        <h2>API Endpoints</h2>
+        <p>The NewsSource API provides the following endpoints:</p>
+        <ul>
+          <li>
+            <strong>- <code>/</code></strong> - This endpoint gives you idea of
+            how to can use the API and it has the documentation for the API<br /><b
+              >Example:</b
+            ><br /><strong>
+              https://newssource.pythonanywhere.com<a
+                href="https://newssource.pythonanywhere.com/"
+                target="_blank"
+              >
+                <img src="link_icon.png" alt="Link icon" /> </a
+            ></strong>
+          </li>
+          <li>
+            <strong>- <code>/query/query_string</code></strong> - This endpoint
+            allows users to search for news on a specific topic. The parameter
+            is the topic that the user wants to search for. The API then returns
+            the trending news, tweets, and Wikipedia summary related to the
+            topic.<br /><b>Example:</b><br />
+            <strong
+              >https://newssource.pythonanywhere.com/query/bitcoin<a
+                href="https://newssource.pythonanywhere.com/query/bitcoin"
+                target="_blank"
+                ><img src="link_icon.png" alt="Link icon" /></a
+            ></strong>
+          </li>
+          <li>
+            <strong>- <code>/trendingNews</code></strong> - This endpoint
+            provides users with trending news on various topics. The API returns
+            the latest news articles sorted by their publication date.<br /><b
+              >Example:</b
+            ><br />
+            <strong
+              >https://newssource.pythonanywhere.com/trendingNews<a
+                href="https://newssource.pythonanywhere.com/trendingNews"
+                target="_blank"
+                ><img src="link_icon.png" alt="Link icon" /></a
+            ></strong>
+          </li>
+          <li>
+            <strong>- <code>/api</code></strong> - This endpoint returns a demo
+            data file in JSON format to help users understand the data structure
+            returned by the API.<br /><b>Example:</b><br />
+            <strong
+              >https://newssource.pythonanywhere.com/api<a
+                href="https://newssource.pythonanywhere.com/api"
+                target="_blank"
+                ><img src="link_icon.png" alt="Link icon" /></a
+            ></strong>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h2>Response Formats</h2>
+        <p>The API returns JSON data by default.</p>
+        <h3>Supported formats</h3>
+        The API returns a JSON object containing the following keys:
+        <pre>
+[
+  {
+    "_id": "63a67b57200774c0349479f8",
+    "title": "Attack of 26/11",
+    "description": "The 2008 Mumbai attacks (also referred to as 26/11, pronounced 'twenty six eleven')  were a series of terrorist attacks that took place in November 2008, when 10 members of Lashkar-e-Taiba, an Islamist terrorist organisation from Pakistan, carried out 12 coordinated shooting and bombing attacks lasting four days across Mumbai. On November 26, 2008, 10 Lashkar-e-Taiba terrorists from Pakistan arrived by sea route and opened fire, killing 166 people",
+    "imageUrl": "https://images.thequint.com/thequint/2017-11/4c988188-c509-4f78-85ba-875dc73009ae/26%2011%20HC.jpg",
+    "dataSources": "Wikipedia, The Hindu",
+    "sourceConfidence": 89,
+    "category": "Incident",
+    "dateCreated": "2022-12-24T04:05:26.267Z",
+    "__v": 0
+  },
+  {
+    "_id": "63a67bde200774c0349479fa",
+    "title": "GDSC",
+    "description": "Google Developer Student Clubs are university based community groups for students interested in Google developer technologies. Students from all undergraduate or graduate programs with an interest in growing as a developer are welcome. By joining a GDSC, students grow their knowledge in a peer-to-peer learning environment and build solutions for local businesses and their community.",
+    "imageUrl": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,dpr_2,f_auto,g_center,q_auto:good/v1/gcs/platform-data-dsc/events/small-logo.png",
+    "dataSources": "Google",
+    "sourceConfidence": 100,
+    "category": "Community",
+    "dateCreated": "2022-12-24T04:05:26.267Z",
+    "__v": 0
+  }
+]
+</pre
+        >
+        <ul>
+          <li><strong>_id:</strong> A unique identifier for the event.</li>
+          <li>
+            <strong>title:</strong> The title of the event, in this case,
+            "Attack of 26/11".
+          </li>
+          <li>
+            <strong>description:</strong> A description of the event, including
+            details about the attacks and the organization responsible for them.
+          </li>
+          <li>
+            <strong>imageUrl:</strong> A URL pointing to an image related to the
+            event, in this case, a picture of the aftermath of the attacks.
+          </li>
+          <li>
+            <strong>dataSources:</strong> A comma-separated list of sources used
+            to gather information about the event, in this case, Wikipedia and
+            The Hindu.
+          </li>
+          <li>
+            <strong>sourceConfidence:</strong> A confidence score (out of 100)
+            indicating the reliability of the sources used to gather information
+            about the event.
+          </li>
+          <li>
+            <strong>category:</strong> A category for the event, in this case,
+            "Incident".
+          </li>
+          <li>
+            <strong>dateCreated:</strong> The date and time when the event was
+            created in ISO 8601 format.
+          </li>
+          <li>
+            <strong>__v:</strong> A version field used by the database, which
+            can be ignored for most purposes.
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Authentication and Authorization</h2>
+        <p>
+          This API does not require authentication or authorization for
+          accessing any of the endpoints. However, if you plan on using this API
+          for a production environment, it is recommended to add proper
+          authentication and authorization mechanisms.
+        </p>
+      </section>
+      <section>
+        <h2>Rate Limiting</h2>
+        <p>
+          The API does not currently implement any rate limiting. However, if
+          the API is used extensively, it may cause performance issues, and it
+          is recommended to implement rate limiting to prevent abuse.
+        </p>
+      </section>
+      <section>
+        <h2>Future Improvements</h2>
+
+        <ul>
+          <li>
+            - Adding support for pagination to prevent overwhelming the client
+            with large amounts of data.
+          </li>
+          <li>
+            - Adding support for sorting and filtering to allow the client to
+            customize the response data.
+          </li>
+          <li>
+            - Improving the accuracy of the machine learning model used to
+            summarize and classify news articles.
+          </li>
+          <li>
+            - Adding more sources of data for the API to fetch information from.
+          </li>
+        </ul>
+        <p>
+          That concludes the documentation for the NewsSource API. If you have
+          any further questions, feel free to reach out to the developer.
+        </p>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2023 NewsSource. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
